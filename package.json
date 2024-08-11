@@ -1,0 +1,39 @@
+{
+  "name": "lotjcolor",
+  "displayName": "LotJ Color",
+  "description": "",
+  "version": "1.0.0",
+  "publisher": "Mnemosyne",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mnemosynium/lotjcolor"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.lotjColor",
+        "title": "LotJ Color Preview"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "build": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  }
+}
