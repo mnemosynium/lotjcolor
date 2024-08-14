@@ -38,7 +38,7 @@
         },
         "lotjcolor.displayfontsize": {
           "type": "number",
-          "default": 1,
+          "default": 0.8125,
           "description": "Size of font in display, entered in points."
         }
       }
