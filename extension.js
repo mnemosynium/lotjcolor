@@ -335,6 +335,12 @@ function updatePreview(fullText, panel) {
   let lastColorCode = null;
   let formattedText = "";
 
+  // fetch the configurations on update.
+  let config = vscode.workspace.getConfiguration("lotjcolor");
+  let breakbetweenlines = config.get("breakbetweenlines");
+  let fontfamily = config.get("displayfont");
+  let fontsize = config.get("displayfontsize");
+
   const lines = fullText.split("\n");
 
   lines.forEach((line) => {
@@ -371,12 +377,12 @@ function updatePreview(fullText, panel) {
       }
     });
 
-    formattedText += `<br>`;
+    if (breakbetweenlines) formattedText += `<br>`;
   });
 
   panel.webview.html = `
     <html>
-      <body style="font-family: 'Courier New', Courier, monospace; white-space: pre;">
+      <body style="font-size: ${fontsize}em; font-family: ${fontfamily}; white-space: pre;">
         ${formattedText}
       </body>
     </html>
