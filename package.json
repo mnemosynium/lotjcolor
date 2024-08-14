@@ -2,7 +2,7 @@
   "name": "lotjcolor",
   "displayName": "LotJ Color",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "publisher": "Mnemosyne",
   "engines": {
     "vscode": "^1.92.0"
@@ -22,7 +22,27 @@
         "command": "extension.lotjColor",
         "title": "LotJ Color Preview"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Lotj Color Preview",
+      "properties": {
+        "lotjcolor.breakbetweenlines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include a blank line-break between lines."
+        },
+        "lotjcolor.displayfont": {
+          "type": "string",
+          "default": "'Courier New', Courier, monospace",
+          "description": "Font-style to use, entered in css-format."
+        },
+        "lotjcolor.displayfontsize": {
+          "type": "number",
+          "default": 1,
+          "description": "Size of font in display, entered in points."
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
