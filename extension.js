@@ -1,6 +1,5 @@
 const vscode = require("vscode");
 
-
 function activate(context) {
   let panel = null;
 
@@ -341,7 +340,6 @@ function updatePreview(fullText, panel) {
   let breakbetweenlines = config.get("breakbetweenlines");
   let fontfamily = config.get("displayfont");
   let fontsize = config.get("displayfontsize");
-  
 
   const lines = fullText.split("\n");
 
@@ -379,8 +377,7 @@ function updatePreview(fullText, panel) {
       }
     });
 
-    if( breakbetweenlines )
-      formattedText += `<br>`;
+    if (breakbetweenlines) formattedText += `<br>`;
   });
 
   panel.webview.html = `
