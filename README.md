@@ -34,6 +34,25 @@ Once VSCode is reloaded, the extension will be ready for use.
 3. A new preview panel will open beside your text editor, displaying the color-coded text as it would appear in the Legends of the Jedi MUD.
 4. The preview will update automatically as you type or modify the text in the active editor.
 
+## Settings
+
+- `lotjcolor.breakbetweenlines` (default: `true`):
+
+  Controls whether a blank line break is inserted between lines of text. This can improve readability for those who prefer spaced-out text.
+
+- `lotjcolor.displayfont` (default: `'Courier New', Courier, monospace`):
+
+  Specifies the font family used in the preview panel.
+
+- `lotjcolor.displayfontsize` (default: `0.8125`):
+
+  Defines the font size in em units for the preview panel.
+
+To modify these settings:
+
+1. Open the settings in VSCode (Ctrl+,).
+2. Search for "Lotj Color" to find the related settings.
+
 ## Supported Color Codes
 
 The extension supports all LotJ color codes, including:
