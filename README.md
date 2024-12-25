@@ -6,7 +6,7 @@ This VSCode extension provides a live preview of color-coded text for the Legend
 
 ### 1. Download the Latest `.vsix` File
 
-1. Go to the [Releases](https://github.com/your-repo/releases) section of this repository.
+1. Go to the [Releases](https://github.com/mnemosynium/lotjcolor/releases) section of this repository.
 2. Download the latest `.vsix` file.
 
 ### 2. Install the Extension Manually
