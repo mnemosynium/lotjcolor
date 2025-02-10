@@ -340,6 +340,7 @@ function updatePreview(fullText, panel) {
   let breakbetweenlines = config.get("breakbetweenlines");
   let fontfamily = config.get("displayfont");
   let fontsize = config.get("displayfontsize");
+  let backgroundColor = config.get("backgroundcolor");
 
   const lines = fullText.split("\n");
 
@@ -382,7 +383,7 @@ function updatePreview(fullText, panel) {
 
   panel.webview.html = `
     <html>
-      <body style="font-size: ${fontsize}em; font-family: ${fontfamily}; white-space: pre;">
+      <body style="background-color: ${backgroundColor}; font-size: ${fontsize}em; font-family: ${fontfamily}; white-space: pre;">
         ${formattedText}
       </body>
     </html>

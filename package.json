@@ -2,7 +2,7 @@
   "name": "lotjcolor",
   "displayName": "LotJ Color",
   "description": "",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "Mnemosyne",
   "engines": {
     "vscode": "^1.92.0"
@@ -40,6 +40,11 @@
           "type": "number",
           "default": 0.8125,
           "description": "Size of font in display, entered in em units."
+        },
+        "lotjcolor.backgroundcolor": {
+          "type": "string",
+          "default": "#000000",
+          "description": "Background color of display, entered in hex format."
         }
       }
     }
