@@ -341,6 +341,8 @@ function updatePreview(fullText, panel) {
   let fontfamily = config.get("displayfont");
   let fontsize = config.get("displayfontsize");
   let backgroundColor = config.get("backgroundcolor");
+  let showColumnGuide = config.get("showColumnGuide");
+  let columnGuideWidth = config.get("columnGuideWidth");
 
   const lines = fullText.split("\n");
 
@@ -382,12 +384,34 @@ function updatePreview(fullText, panel) {
   });
 
   panel.webview.html = `
-    <html>
-      <body style="background-color: ${backgroundColor}; font-size: ${fontsize}em; font-family: ${fontfamily}; white-space: pre;">
-        ${formattedText}
-      </body>
-    </html>
-  `;
+  <html>
+    <head>
+      <style>
+        body {
+          background-color: ${backgroundColor};
+          font-size: ${fontsize}em;
+          font-family: ${fontfamily};
+          white-space: pre;
+          position: relative;
+        }
+        .column-guide {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: calc(${columnGuideWidth + 2}ch);
+          width: 1px;
+          background-color: rgba(255, 255, 255, 0.3);
+          z-index: 10;
+          pointer-events: none;
+        }
+      </style>
+    </head>
+    <body>
+      ${showColumnGuide ? '<div class="column-guide"></div>' : ""}
+      ${formattedText}
+    </body>
+  </html>
+`;
 }
 
 function deactivate() {}

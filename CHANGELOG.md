@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.3.0
+
+- Add: Added configurable vertical line to indicate line-break width.
+
+## 1.2.0
+
+- Add: Added backgroundColor setting. Defaults to #000000.
+
 ## 1.1.0
 
 Contributed by @meatRay
