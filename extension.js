@@ -398,7 +398,7 @@ function updatePreview(fullText, panel) {
           position: absolute;
           top: 0;
           bottom: 0;
-          left: calc(${columnGuideWidth + 2}ch);
+          left: calc(${columnGuideWidth + 3}ch);
           width: 1px;
           background-color: rgba(255, 255, 255, 0.3);
           z-index: 10;
