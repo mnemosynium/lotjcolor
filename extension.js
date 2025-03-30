@@ -51,6 +51,7 @@ function activate(context) {
 
 function updatePreview(fullText, panel) {
   const colorMapping = {
+    "&000": { color: "#000000", highlight: "#ffffff" },
     "&001": { color: "#800000", highlight: "#ff0000" },
     "&002": { color: "#008000", highlight: "#00ff00" },
     "&003": { color: "#808000", highlight: "#ffff00" },
