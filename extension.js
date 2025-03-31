@@ -392,7 +392,7 @@ function updatePreview(fullText, panel) {
           background-color: ${backgroundColor};
           font-size: ${fontsize}em;
           font-family: ${fontfamily};
-          white-space: normal;
+          white-space: pre;
           position: relative;
         }
         .column-guide {
