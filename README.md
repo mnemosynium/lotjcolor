@@ -1,5 +1,7 @@
 # LotJ Color Preview - VSCode Extension
 
+![image](https://github.com/user-attachments/assets/4b775157-24ba-4e6f-abe4-53a0ea09c490)
+
 This VSCode extension provides a live preview of color-coded text for the Legends of the Jedi (LotJ) MUD. It allows you to see how the text will appear in the game as you type, making it easier to create, edit, and visualize color codes in real-time.
 
 ## Installation
@@ -52,16 +54,6 @@ To modify these settings:
 
 1. Open the settings in VSCode (Ctrl+,).
 2. Search for "Lotj Color" to find the related settings.
-
-## Supported Color Codes
-
-The extension supports all LotJ color codes, including:
-
-- `&001` to `&255` - Colors and highlights
-- `&r`, `&g`, `&b`, `&p`, `&c`, `&w`, `&z` - Standard 16 color codes
-- `&k` - Toggles highlighting
-- `&I` - Italicizes text
-- `&U` - Underlines text
 
 ## Credits
 
