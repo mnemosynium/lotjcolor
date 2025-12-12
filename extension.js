@@ -341,17 +341,43 @@ function updatePreview(fullText, panel) {
   let breakbetweenlines = config.get("breakbetweenlines");
   let fontfamily = config.get("displayfont");
   let fontsize = config.get("displayfontsize");
-  let backgroundColor = config.get("backgroundcolor");
-  let showColumnGuide = config.get("showColumnGuide");
-  let columnGuideWidth = config.get("columnGuideWidth");
+  let backgroundColor = config.get("backgroundcolor") || "#000000";
+  let showColumnGuide = config.get("showColumnGuide") || false;
+  let columnGuideWidth = config.get("columnGuideWidth") || 79;
 
   const lines = fullText.split("\n");
 
   lines.forEach((line) => {
-    const segments = line.split(/(&\d{3}|&[rgObpcwzRGYBPWCkDIUw])/g);
+    const segments = line.split(
+      /(&\d{3}|&#[0-9A-Fa-f]{6}|&[rgObpcwzRGYBPWCkDIUw])/g
+    );
 
     segments.forEach((segment) => {
-      if (segment in colorMapping) {
+      // Check for 24-bit hex color format (&#AABBCC)
+      if (segment.startsWith("&#") && segment.length === 8) {
+        const hexColor = "#" + segment.substring(2);
+        // Calculate contrasting highlight color (invert the color)
+        const r = parseInt(hexColor.substring(1, 3), 16);
+        const g = parseInt(hexColor.substring(3, 5), 16);
+        const b = parseInt(hexColor.substring(5, 7), 16);
+        const invertedR = (255 - r).toString(16).padStart(2, "0");
+        const invertedG = (255 - g).toString(16).padStart(2, "0");
+        const invertedB = (255 - b).toString(16).padStart(2, "0");
+        const highlightColor = `#${invertedR}${invertedG}${invertedB}`;
+
+        currentStyle.color = hexColor;
+        lastColorCode = segment;
+        // Store the highlight color in a temporary structure
+        if (!colorMapping[segment]) {
+          colorMapping[segment] = {
+            color: hexColor,
+            highlight: highlightColor,
+          };
+        }
+        currentStyle.isItalic = false;
+        currentStyle.isUnderline = false;
+        currentStyle.isHighlighted = false;
+      } else if (segment in colorMapping) {
         currentStyle.color = colorMapping[segment].color;
         lastColorCode = segment;
         currentStyle.isItalic = false;
