@@ -2,7 +2,7 @@
   "name": "lotjcolor",
   "displayName": "LotJ Color",
   "description": "",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "publisher": "Mnemosyne",
   "engines": {
     "vscode": "^1.106.0"
@@ -34,7 +34,7 @@
         },
         "lotjcolor.columnGuideWidth": {
           "type": "number",
-          "default": 79,
+          "default": 80,
           "description": "Column number at which to show the vertical guide.",
           "order": "2"
         },

@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.4.1
+
+- Tweak: Adjust default linebreak width to 80 characters
+
+## 1.4.0
+
+- Add: 24-bit color support
+
 ## 1.3.0
 
 - Add: Added configurable vertical line to indicate line-break width.
